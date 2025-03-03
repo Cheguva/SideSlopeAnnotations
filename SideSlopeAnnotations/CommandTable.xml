@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeyinTree xmlns="http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd">
+
+    <!-- Required | Root Table (SideSlopeAnnotations) -->
+    <RootKeyinTable ID="root">
+        <Keyword SubtableRef="Commands" CommandWord="Annotate">
+            <Options Required="true" />
+        </Keyword>
+    </RootKeyinTable>
+
+    <SubKeyinTables>
+        <!--  Secondary Command Table (MAIN _____ )-->
+        <KeyinTable ID="Commands">      
+			<!-- Report Table (SideSlopeAnnotations YourDirectCommand)  -->
+			<Keyword CommandWord="Annotate_Side_Slope" />
+        </KeyinTable>
+    </SubKeyinTables>
+		
+
+    <!-- Maps Keyin Commands to Functions in Keyin.cs File -->
+    <KeyinHandlers>
+		<KeyinHandler Keyin="Annotate Annotate_Side_Slope"	Function="SideSlopeAnnotations.Keyin.AnnotateSideSlope"/>
+    </KeyinHandlers>
+
+</KeyinTree>
+
