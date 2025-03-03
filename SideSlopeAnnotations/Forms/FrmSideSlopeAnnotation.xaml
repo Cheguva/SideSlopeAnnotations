@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SideSlopeAnnotations.Forms"
         mc:Ignorable="d"
-        Title="Annotate Side Slope" Height="426.3" Width="615.167" MinWidth="307" MinHeight="392" MaxWidth="700" MaxHeight="600" Loaded="Window_Loaded" Closed="Window_Closed" ResizeMode="NoResize" Icon="/SideSlopeAnnotations;component/Resources/SlopeAnnotation.png">
-    <Grid Margin="0,0,3.6,2">
+        Title="Annotate Side Slope" Height="521" Width="765" MinWidth="307" MinHeight="392" MaxWidth="700" MaxHeight="600" Loaded="Window_Loaded" Closed="Window_Closed" ResizeMode="NoResize" Icon="/SideSlopeAnnotations;component/Resources/SlopeAnnotation.png">
+    <Grid Margin="0,0,0,-6">
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="0*"/>
@@ -21,10 +21,16 @@
             <ColumnDefinition Width="78*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnPlaceSlopeLines" TabIndex="14" FontWeight="Normal" ToolTip="Start placing Major and Minor Slope lines using Active Line Style" Content="Place Side Slope" HorizontalAlignment="Left" Width="120" Background="#FF0C8B12" Margin="75.4,273,0,0" Height="30" VerticalAlignment="Top" Click="BtnPlaceCell_Click" Grid.Column="3" Grid.ColumnSpan="2" Foreground="White" Grid.Row="1" Grid.RowSpan="2"/>
-        <Button x:Name="btnCancel" TabIndex="15" IsCancel="True" FontWeight="Normal" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="30" Foreground="White" Background="#FFC0372D" Margin="10.2,273,0,0" ToolTip="Close this form" Click="BtnCancel_Click" Grid.Column="4" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button x:Name="btnPlaceSlopeLines" TabIndex="14" FontWeight="Normal" ToolTip="Start placing Major and Minor Slope lines using Active Line Style" Content="Place Side Slope" HorizontalAlignment="Left" Width="120" Background="#FF0C8B12" Margin="66,353,0,0" Height="30" VerticalAlignment="Top" Click="BtnPlaceCell_Click" Grid.Column="3" Foreground="White" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button x:Name="btnCancel" TabIndex="15" IsCancel="True" FontWeight="Normal" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="30" Foreground="White" Background="#FFC0372D" Margin="0,353,0,0" ToolTip="Close this form" Click="BtnCancel_Click" Grid.Column="4" Grid.Row="1" Grid.RowSpan="2"/>
         <GroupBox x:Name="groupBox"  FontWeight="SemiBold" Header="Step 4 : Slope Settings" HorizontalAlignment="Left" Height="278" Margin="15.4,65,0,0" VerticalAlignment="Top" Width="290" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Canvas>
+                <Button x:Name="btnSelectStartPoint" Content="Select Start Point" Click="BtnSelectStartPoint_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="-340" Canvas.Top="305"/>
+                <CheckBox x:Name="chkStartPointSelected" Content="Start Point Selected" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-202" Canvas.Top="310"/>
+
+                <Button x:Name="btnSelectEndPoint" Content="Select End Point" Click="BtnSelectEndPoint_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="-340" Canvas.Top="335"/>
+                <CheckBox x:Name="chkEndPointSelected" Content="End Point Selected" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-202" Canvas.Top="337"/>
+
                 <Label x:Name="lAngle" Visibility="Hidden" FontWeight="Normal" Content="Angle (deg):" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="74" RenderTransformOrigin="0.705,0.423" Foreground="#FF3065BD" Canvas.Left="11" Canvas.Top="35"/>
                 <TextBox x:Name="textBoxAngle" Visibility="Hidden" TabIndex="8" FontWeight="Normal" HorizontalAlignment="Left" Background="#FFFFFED8" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Canvas.Left="91" Canvas.Top="37"/>
                 <Label x:Name="lblIntervalBetweenMajor" FontWeight="Normal" Content="Interval between Majors (m) :" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF3065BD" Canvas.Top="5" Canvas.Left="50" Width="170"/>
@@ -77,7 +83,7 @@
 
             </Canvas>
         </GroupBox>
-        <CheckBox x:Name="chkTargetModelChoice" IsChecked="True"  ToolTip="If checked, Slope Lines are added to Active model otherwise to model of selected element" Content="Add Slope lines to Active Model" HorizontalAlignment="Left" Margin="175,280,0,0" VerticalAlignment="Top" Width="205" FontWeight="Medium" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="2"/>
+        <CheckBox x:Name="chkTargetModelChoice" IsChecked="True"  ToolTip="If checked, Slope Lines are added to Active model otherwise to model of selected element" Content="Add Slope lines to Active Model" HorizontalAlignment="Left" Margin="200,360,0,0" VerticalAlignment="Top" Width="205" FontWeight="Medium" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

@@ -44,47 +44,47 @@
     <Reference Include="WindowsBase" />
     <Reference Include="ustation">
       <Private>false</Private>
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\ustation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\ustation.dll</HintPath>
     </Reference>
     <Reference Include="Bentley.CifNET.GeometryModel.SDK.4.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.GeometryModel.SDK.4.0.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.GeometryModel.SDK.4.0.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.CifNET.GeometryModel.SDK.Edit.4.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.GeometryModel.SDK.Edit.4.0.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.GeometryModel.SDK.Edit.4.0.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.CifNET.SDK.4.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.SDK.4.0.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.SDK.4.0.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.CifNET.SDK.Edit.4.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.SDK.Edit.4.0.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Cif\Bentley.CifNET.SDK.Edit.4.0.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.DgnDisplayNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bfed12b64a9b7df, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.DgnDisplayNet.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.DgnDisplayNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.DgnPlatformNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.DgnPlatformNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.DgnPlatformNET.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.GeometryNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.GeometryNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.GeometryNET.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.GeometryNET.Structs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.GeometryNET.Structs.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Bentley.GeometryNET.Structs.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.Interop.MicroStationDGN, Version=8.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Assemblies\Bentley.Interop.MicroStationDGN.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Assemblies\Bentley.Interop.MicroStationDGN.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Bentley.MicroStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4, processorArchitecture=AMD64">
-      <HintPath>..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Assemblies\Bentley.MicroStation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bentley\OpenRail Designer 2023.00\OpenRailDesigner\Assemblies\Bentley.MicroStation.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -106,15 +107,74 @@ namespace SideSlopeAnnotations.Forms
         int nMajorCount = 0;
 
         #endregion
+   
+            private BIM.Point3d? startPoint = null;
+            private BIM.Point3d? endPoint = null;
+
+            public FrmSideSlopeAnnotation()
+            {
+                InitializeComponent();
+            }
+            private Bentley.Interop.MicroStationDGN.Point3d? SelectPointOnElement(Element element)
+            {
+                try
+                {
+                    // Prompt the user to select a point on the element
+                    MessageBox.Show("Click on the primary feature to select the point.");
+
+                    // Capture the mouse click event to get the selected point coordinates
+                    Bentley.Interop.MicroStationDGN.Point3d? selectedPoint = null;
+
+                    // Use a custom method to capture the mouse click event
+                    CaptureMouseClick((point) =>
+                    {
+                        selectedPoint = point;
+                        MessageBox.Show($"Selected Point: X={selectedPoint.Value.X}, Y={selectedPoint.Value.Y}, Z={selectedPoint.Value.Z}");
+                    });
+
+                    // Wait for the user to select the point
+                    while (!selectedPoint.HasValue)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+
+                    return selectedPoint;
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.Message);
+                    return null;
+                }
+            }
+
+            private void CaptureMouseClick(Action<Bentley.Interop.MicroStationDGN.Point3d> onClick)
+            {
+                // Implement the logic to capture the mouse click and call onClick with the selected point
+                // This is a placeholder for the actual implementation
+            }
+            private void BtnSelectStartPoint_Click(object sender, RoutedEventArgs e)
+            {
+                // Logic to select start point
+                MessageBox.Show("Select the start point on the primary feature.");
+                startPoint = SelectPointOnElement(m_PrimaryElement);
+                if (startPoint.HasValue)
+                {
+                    chkStartPointSelected.IsChecked = true;
+                }
+            }
+            private void BtnSelectEndPoint_Click(object sender, RoutedEventArgs e)
+            {
+                // Logic to select end point
+                MessageBox.Show("Select the end point on the primary feature.");
+                endPoint = SelectPointOnElement(m_PrimaryElement);
+                if (endPoint.HasValue)
+                {
+                    chkEndPointSelected.IsChecked = true;
+                }
+            }
 
 
-        public FrmSideSlopeAnnotation()
-        {
-            m_sInstance = this;
-            InitializeComponent();
-
-        }
-
+     
         /// <summary>
         /// Update Element Details in the Form
         /// </summary>
@@ -839,7 +899,11 @@ namespace SideSlopeAnnotations.Forms
                 }
 
                 #endregion
-
+                if (startPoint.HasValue && endPoint.HasValue)
+                {
+                    // Draw slope only between startPoint and endPoint
+                    // Implement the logic to draw slope between the selected points
+                }
                 if (ChkRedraw)
                 {
                     oCriteria.SetModelRef(Session.Instance.GetActiveDgnModel());
@@ -1036,10 +1100,21 @@ namespace SideSlopeAnnotations.Forms
                                             {
                                                 MidPoint = Bentley.GeometryNET.DPoint3d.Interpolate(LeftPoint, m_dMinorLength / 100, RightPoint);
                                             }
-                                            else //Cut Situation
+                                            #region --Handle Fixed Minor Line condition for FILL 2D
+                                            if (SideSlopeAnnotations.Forms.FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodFill2D)
+                                            {
+                                                MidPoint = Bentley.GeometryNET.DPoint3d.Interpolate(LeftPoint, m_dMinorLength / 100, RightPoint);
+                                            }
+                                            #endregion
+
+                                            #region --Handle Fixed Minor Line condition for CUT 2D
+                                            #region --Handle Fixed Minor Line condition for CUT 2D
+                                            if (SideSlopeAnnotations.Forms.FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodCut2D)
                                             {
                                                 MidPoint = Bentley.GeometryNET.DPoint3d.Interpolate(RightPoint, m_dMinorLength / 100, LeftPoint);
                                             }
+                                            #endregion
+                                            #endregion
                                         }
                                         #endregion
 
@@ -1073,7 +1148,7 @@ namespace SideSlopeAnnotations.Forms
 
                                     #region --SlopeMethod = Elevation for Minor Lines
 
-                                    if (FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodElevation)
+if (SideSlopeAnnotations.Forms.FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodElevation)
                                     {
 
 
@@ -1103,14 +1178,14 @@ namespace SideSlopeAnnotations.Forms
                                     #endregion
 
                                     #region --SlopeMethod = Fill2D for Minor Lines
-                                    if (FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodFill2D)
+                                    if (SideSlopeAnnotations.Forms.FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodFill2D)
                                     {
                                         slopeLine = msApp.CreateLineElement2(TemplateElement, origin, PntoStart);
                                     }
                                     #endregion
 
                                     #region --SlopeMethod = Cut2D for Minor Lines
-                                    if (FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodCut2D)
+                                    if (SideSlopeAnnotations.Forms.FrmSideSlopeAnnotation.currentSlopeMethod == SlopeMethod.SlopeMethodCut2D)
                                     {
                                         slopeLine = msApp.CreateLineElement2(TemplateElement, Inter[0], PntoStart);
                                     }
